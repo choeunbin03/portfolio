@@ -1,0 +1,12 @@
+/* 스크롤바 custom */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #dbdbdb;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: #999;
+  border-radius: 4px;
+}

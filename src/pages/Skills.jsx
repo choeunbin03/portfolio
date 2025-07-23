@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import InfoComponents from '../compenents/InfoComponents';
 import SkillsComponents from '../compenents/SkillsComponents';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Skills = () => {
   //strong
@@ -37,28 +38,53 @@ const Skills = () => {
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <div className="w-[80%] h-[80%]">
-        <div className="">
-          <p className="flex items-start ml-5 mb-5 text-[40px] font-bold">
-            Skills
-          </p>
-          <hr />
-        </div>
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 1, y: +30 }} // 초기 상태
+            whileInView={{ opacity: 1, y: 0 }} // 애니메이션 상태
+            exit={{ opacity: 1, y: +100 }} // 종료 상태
+            transition={{ duration: 0.5 }} // 애니메이션 지속 시간
+            className="overflow-hidden"
+          >
+            <div className="">
+              <p className="flex items-start ml-5 mb-5 text-[40px] font-bold">
+                Skills
+              </p>
+              <hr />
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
         <div className="h-[90%] flex justify-between">
-          <div className="overflow-auto">
+          <motion.ul
+            className=""
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, staggerChildren: 0.5 }}
+          >
             {Object.entries(info).map(([key, value]) => {
               if (value && value != null) {
                 return (
-                  <SkillsComponents
-                    isOpened={isOpened[key]}
-                    setIsOpened={setIsOpened}
-                    label={key}
-                    contents={value}
-                  />
+                  <AnimatePresence mode="popLayout">
+                    <motion.li
+                      key={key}
+                      initial={{ opacity: 0, x: -100 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ type: 'spring' }}
+                    >
+                      <SkillsComponents
+                        isOpened={isOpened[key]}
+                        setIsOpened={setIsOpened}
+                        label={key}
+                        contents={value}
+                      />
+                    </motion.li>
+                  </AnimatePresence>
                 );
               }
               return null;
             })}
-          </div>
+          </motion.ul>
         </div>
       </div>
     </div>

@@ -67,7 +67,7 @@ const Projects = () => {
   const projects = [project01, project02, project01];
 
   const [currentProject, setCurrentProject] = useState(0); //0은 project01
-  const [fade, setFade] = useState(false);
+  const [fade, setFade] = useState(true);
 
   const handleCurrentProject = (index) => {
     if (currentProject !== index) {
@@ -75,48 +75,64 @@ const Projects = () => {
       setTimeout(() => {
         setCurrentProject(index);
         setFade(true); // Fade in 시작
-      }, 150); // Fade out 후 300ms 대기
+      }, 300); // Fade out 후 300ms 대기
     }
   };
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
       <div className="w-[80%] h-[80%]">
-        <div>
-          <span className="flex items-center w-full">
-            {projects.map((_, index) => {
-              const projectNumber = `Project${String(index + 1).padStart(
-                2,
-                '0'
-              )}`;
-              return (
-                <p
-                  key={index}
-                  className={`flex-1 text-center ml-5 mb-5 text-[40px] font-bold cursor-default ${
-                    index === currentProject
-                      ? 'text-[#7122fa]'
-                      : 'text-[#c9c9c9] hover:text-[#A078F0]'
-                  }`}
-                  onClick={() => handleCurrentProject(index)}
-                >
-                  {projectNumber}
-                </p>
-              );
-            })}
-          </span>
-          <hr />
-        </div>
-        <div className="w-full h-[90%] flex justify-between">
-          <div className="flex w-full h-full relative">
-            <div
-              className={`w-full h-full absolute transition-opacity duration-300 ease-in-out ${
-                fade ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <ProjectComponents project={projects[currentProject]} />
+        <AnimatePresence>
+          <motion.div
+            initial={{ opacity: 1, y: +30 }} // 초기 상태
+            whileInView={{ opacity: 1, y: 0 }} // 애니메이션 상태
+            exit={{ opacity: 1, y: +100 }} // 종료 상태
+            transition={{ duration: 0.5 }} // 애니메이션 지속 시간
+            className=""
+          >
+            <div>
+              <span className="flex items-center w-full">
+                {projects.map((_, index) => {
+                  const projectNumber = `Project${String(index + 1).padStart(
+                    2,
+                    '0'
+                  )}`;
+                  return (
+                    <p
+                      key={index}
+                      className={`flex-1 text-center ml-5 mb-5 text-[40px] font-bold cursor-default ${
+                        index === currentProject
+                          ? 'text-[#7122fa]'
+                          : 'text-[#c9c9c9] hover:text-[#A078F0]'
+                      }`}
+                      onClick={() => handleCurrentProject(index)}
+                    >
+                      {projectNumber}
+                    </p>
+                  );
+                })}
+              </span>
+              <hr />
             </div>
-          </div>
-        </div>
+          </motion.div>
+          <motion.div
+            className="w-full h-[90%] flex justify-between"
+            initial={{ opacity: 0 }} // 초기 상태
+            whileInView={{ opacity: 1 }} // 애니메이션 상태
+            exit={{ opacity: 0 }} // 종료 상태
+            transition={{ duration: 2 }} // 애니메이션 지속 시간
+          >
+            <div className="flex w-full h-full relative">
+              <div
+                className={`w-full h-full absolute transition-opacity duration-500 ease-in-out ${
+                  fade ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <ProjectComponents project={projects[currentProject]} />
+              </div>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

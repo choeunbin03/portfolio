@@ -40,9 +40,9 @@ const SkillsComponents = ({ isOpened, setIsOpened, label, contents }) => {
         className="flex ml-2 mt-3 text-[22px] items-center cursor-default z-10"
       >
         {!isOpened ? (
-          <i class="xi-angle-right-min"></i>
+          <i className="xi-angle-right-min"></i>
         ) : (
-          <i class="xi-angle-down-min"></i>
+          <i className="xi-angle-down-min"></i>
         )}{' '}
         {contents.language.map((element) => (
           <p className="ml-2">{element}&nbsp;&nbsp;</p>

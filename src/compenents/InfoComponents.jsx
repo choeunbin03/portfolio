@@ -2,8 +2,10 @@ import upperFirstLetter from '../utils/upperFirstLetter';
 
 const InfoComponents = ({ label, contents }) => {
   return (
-    <div className="flex flex-col items-start ml-7 mt-5">
-      <p className="text-[26px] font-bold">{upperFirstLetter(label)}</p>
+    <div className="flex flex-col items-start mt-5">
+      <div className="text-[26px] font-bold flex">
+        <p>{upperFirstLetter(label)}</p>
+      </div>
       <ul className="ml-2 mt-2 list-disc pl-5">
         {contents.map((element) => (
           <li className="text-[16px]">
