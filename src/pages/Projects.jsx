@@ -11,12 +11,13 @@ const Projects = () => {
   return (
     <div className="w-full h-full flex justify-center items-center pr-10">
       <div className="w-[80%] h-full pt-[150px]">
-        <div className="">
-          <p className="flex items-start pl-5  text-[50px] text-point-dark font-bold  w-full pb-2 h-[85px]">
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-1.5 h-12 bg-point-main rounded-full"></div>
+          <p className="text-[50px] text-point-dark font-bold">
             Projects
           </p>
-          <hr className="border-gray-350 border-t-2" />
         </div>
+        <hr className="border-gray-300 border-t-2" />
         <AnimatePresence>
           <motion.div
             className="w-full h-[90%] flex justify-between"

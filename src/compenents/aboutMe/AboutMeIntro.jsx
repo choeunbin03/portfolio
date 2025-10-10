@@ -8,63 +8,66 @@ export default function AboutMeIntro() {
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 1, y: +30 }} // 초기 상태
-        whileInView={{ opacity: 1, y: 0 }} // 애니메이션 상태
-        exit={{ opacity: 1, y: +100 }} // 종료 상태
-        transition={{ duration: 0.5 }} // 애니메이션 지속 시간
+        initial={{ opacity: 1, y: +30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 1, y: +100 }}
+        transition={{ duration: 0.5 }}
         className="overflow"
       >
-        <div className="">
-          <p className="flex items-start pl-5  text-[50px] text-point-dark font-bold  w-full pb-2 h-[85px]">
-            About Me.
-          </p>
-          <hr className="border-gray-350 border-t-2" />
+        <div className="flex items-center gap-3 mb-2">
+          <div className="w-1.5 h-12 bg-point-main rounded-full"></div>
+          <h1 className="text-[50px] text-point-dark font-bold">About Me</h1>
         </div>
+        <hr className="border-gray-300 border-t-2" />
       </motion.div>
+      
       <motion.div
-        initial={{ opacity: 1, x: -50 }} // 초기 상태
-        whileInView={{ opacity: 1, x: 0 }} // 애니메이션 상태
-        exit={{ opacity: 1, x: +100 }} // 종료 상태
-        transition={{ duration: 0.5 }} // 애니메이션 지속 시간
-        className="flex flex-col items-center justify-center md:flex-row md:items-start"
+        initial={{ opacity: 1, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 1, x: +100 }}
+        transition={{ duration: 0.5 }}
+        className="mt-12 grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-8 xl:gap-16 items-start"
       >
-        <div>
+        {/* 프로필 카드 */}
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-6 border-2 border-gray-200 shadow-lg mx-auto xl:mx-0">
           <img
             src="조은빈.jpg"
-            className="w-[230px] sm:w-[230px] md:min-w-[210px] md:w-[210px] lg:w-[260px] my-[30px] md:ml-2 rounded-sm"
+            className="w-[230px] sm:w-[230px] md:w-[240px] lg:w-[260px] rounded-lg shadow-md mb-5"
             alt="증명사진"
           />
-          <div className="justify-items-start mt-[15px] ml-2 md:ml-4 min-w-[240px]">
-            <p className="font-bold text-[25px]">{personalInfo.name}</p>
-            <p className=" text-[18px] text-gray-700">
-              🎂 {personalInfo.birth}
-            </p>
-            <p className="text-[18px] text-gray-700">
-              📧 {personalInfo.contact.email}
-            </p>
-            <p className="text-[18px] text-gray-700">
-              📞 {personalInfo.contact.phone}
-            </p>
+          <div className="space-y-2">
+            <p className="font-bold text-[25px] text-gray-800">{personalInfo.name}</p>
+            <div className="space-y-1.5 text-gray-600">
+              <p className="flex items-center gap-2 text-[17px]">
+                <span className="text-point-main">🎂</span> {personalInfo.birth}
+              </p>
+              <p className="flex items-center gap-2 text-[17px]">
+                <span className="text-point-main">📧</span> {personalInfo.contact.email}
+              </p>
+              <p className="flex items-center gap-2 text-[17px]">
+                <span className="text-point-main">📞</span> {personalInfo.contact.phone}
+              </p>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col items-start md:ml-[50px] xl:ml-[110px] mt-[50px] lg:mt-[80px] shadow-lg rounded-xl px-[40px] py-[30px]">
-          <p className="text-[29px] font-bold text-point-dark whitespace-pre-line min-w-[260px] break-keep">
-            {introduction.headline}
-          </p>
-          {/* ✅ className은 래퍼 div에! */}
-          <div className="prose prose-lg max-w-[700px] text-[16px] md:text-[18px] leading-relaxed break-keep">
+
+        {/* 소개 영역 */}
+        <div className="flex flex-col space-y-6">
+          {/* 헤드라인 */}
+          <div className="border-l-4 border-point-main pl-6 py-2">
+            <h2 className="text-[28px] md:text-[32px] font-bold text-point-dark leading-snug break-keep">
+              {introduction.headline}
+            </h2>
+          </div>
+          
+          {/* 상세 소개 */}
+          <div className="prose prose-lg max-w-none text-[16px] md:text-[18px] leading-relaxed break-keep text-gray-700">
             <ReactMarkdown
-              // remarkPlugins={[remarkGfm, remarkBreaks]} // 필요하면 주석 해제
               components={{
                 strong: ({ node, ...props }) => (
-                  <strong
-                    className="text-point-main font-semibold"
-                    {...props}
-                  />
+                  <strong className="text-point-main font-semibold" {...props} />
                 ),
-                p: ({ node, ...props }) => (
-                  <p className="my-3" {...props} /> // 단락 간 간격
-                ),
+                p: ({ node, ...props }) => <p className="my-4" {...props} />,
               }}
             >
               {introduction.detail}
