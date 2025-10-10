@@ -1,6 +1,6 @@
-import formatNumber from '../utils/formatNumber';
-import openLink from '../utils/openLink';
-import upperFirstLetter from '../utils/upperFirstLetter';
+import formatNumber from '../../utils/formatNumber';
+import openLink from '../../utils/openLink';
+import upperFirstLetter from '../../utils/upperFirstLetter';
 
 const ProjectListComponents = ({ projects }) => {
   return (

@@ -13,8 +13,19 @@ module.exports = {
           selected: '#495BFF',
           main: '#000080',
           dark: '#0a0a5c',
-          reverse: '#ffff7f'
+          reverse: '#ffff7f',
         },
+      },
+      keyframes: {
+        // 100 % 시 왼쪽으로 정확히 절반(-50 %) 만큼 이동
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      animation: {
+        // 20 s 동안 선형(linear)으로 반복
+        'scroll-x': 'marquee 17s linear infinite',
       },
     },
   },

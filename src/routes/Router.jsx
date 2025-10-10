@@ -1,17 +1,20 @@
 import { createBrowserRouter } from 'react-router';
-import Header from '../common/Header';
 import MainPage from '../pages/MainPage';
+import AboutMe from '../pages/AboutMe';
+import Skills from '../pages/Skills';
+import Projects from '../pages/Projects';
+import RootLayout from '../common/RootLayout';
+import Tranner01 from '../pages/projectDetails/Tranner01';
 
 const router = createBrowserRouter([
   {
-    element: <Header />,
+    element: <RootLayout />,
     children: [
-      // 메인 페이지
-      {
-        path: '/',
-        element: <MainPage />,
-      },
-      // Auth 관련 페이지
+      { index: true, element: <MainPage /> }, // "/"   (index route)
+      { path: 'aboutme', element: <AboutMe /> },
+      { path: 'skills', element: <Skills /> },
+      { path: 'projects', element: <Projects /> },
+      { path: 'projects/tranner01', element: <Tranner01 /> },
     ],
   },
 ]);
