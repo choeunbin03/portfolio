@@ -5,17 +5,15 @@ import { userProjects } from '../hooks/useProjects';
 
 const Projects = () => {
   //strong
-  const { project01, project02 } = userProjects();
-  const projects = [project01, project02];
+  const { project01, project02, project03 } = userProjects();
+  const projects = [project01, project02, project03];
 
   return (
     <div className="w-full h-full flex justify-center items-center pr-10">
       <div className="w-[80%] h-full pt-[150px]">
         <div className="flex items-center gap-3 mb-2">
           <div className="w-1.5 h-12 bg-point-main rounded-full"></div>
-          <p className="text-[50px] text-point-dark font-bold">
-            Projects
-          </p>
+          <p className="text-[50px] text-point-dark font-bold">Projects</p>
         </div>
         <hr className="border-gray-300 border-t-2" />
         <AnimatePresence>
@@ -27,8 +25,9 @@ const Projects = () => {
             transition={{ duration: 1 }} // 애니메이션 지속 시간
           >
             <span className="items-center w-full">
-              {projects.map((element, index) => (
-                <div>
+              {/* 최신순으로 정렬 */}
+              {[...projects].reverse().map((element, index) => (
+                <div key={index}>
                   <ProjectComponents project={element} />
                 </div>
               ))}

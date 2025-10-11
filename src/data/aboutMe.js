@@ -35,6 +35,6 @@ export const sections = {
   certificate: [
     { content: 'TOPCIT 3급', period: '2025.05.24' },
     { content: '정보처리기사', period: '' },
-    { content: 'SQLD', period: '' },
+    //{ content: 'SQLD', period: '' },
   ],
 };
