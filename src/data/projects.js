@@ -1,10 +1,11 @@
-export const project01 = {
+export const project02 = {
   // 사진은 담당 파트 개수만큼 넣고 슬라이드
   name: 'Tranner01',
   part: 'FE',
   info: '여행 계획 웹 서비스',
   period: '2024.09.01 ~ 2024.12.15',
   lastUpdate: '2024.12.30',
+  mainImage: '/projects/project01/main_photo.png',
   headCount: { BE: 3, FE: 2 },
   detailPart: {
     FE: [
@@ -24,13 +25,14 @@ export const project01 = {
   ],
 };
 
-export const project02 = {
+export const project01 = {
   // 사진은 담당 파트 개수만큼 넣고 슬라이드
   name: 'Tranner02',
   part: 'BE',
   info: '여행 계획 웹 서비스',
   period: '2025.03.04 ~ 2025.07.20',
   lastUpdate: '2025.07.20',
+  mainImage: '/projects/project02/main_photo.png',
   headCount: { BE: 3, FE: 2 },
   detailPart: {
     FE: [

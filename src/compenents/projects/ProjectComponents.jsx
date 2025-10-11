@@ -5,9 +5,23 @@ const ProjectComponents = ({ project }) => {
   return (
     <div className="w-full h-full 2xl:flex justify-items-center items-center px-[30px] py-[50px] gap-8">
       {/* 이미지 */}
-      <div className="w-[300px] h-[200px] md:w-[500px] md:h-[330px] lg:w-[700px] lg:h-[450px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl shadow-lg border-2 border-gray-300 flex items-center justify-center">
-        <span className="text-gray-500 text-lg">이미지 영역</span>
-      </div>
+      {project.mainImage ? (
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[330px] lg:w-[700px] lg:h-[450px] rounded-xl shadow-lg border-2 border-gray-300 overflow-hidden bg-gray-100">
+          <img 
+            src={project.mainImage} 
+            alt={`${project.name} 메인 이미지`}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.target.style.display = 'none';
+              e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-gray-500 text-lg">이미지 준비 중</div>';
+            }}
+          />
+        </div>
+      ) : (
+        <div className="w-[300px] h-[200px] md:w-[500px] md:h-[330px] lg:w-[700px] lg:h-[450px] bg-gradient-to-br from-gray-200 to-gray-300 rounded-xl shadow-lg border-2 border-gray-300 flex items-center justify-center">
+          <span className="text-gray-500 text-lg">이미지 영역</span>
+        </div>
+      )}
 
       {/* Content */}
       <div className="h-[100%] py-4 flex-1">

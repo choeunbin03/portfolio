@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import { useAboutMe } from '../../hooks/useAboutMe';
+import ValueCards from './ValueCards';
+import InterestTags from './InterestTags';
 
 export default function AboutMeIntro() {
   const { personalInfo, introduction } = useAboutMe();
@@ -73,6 +75,12 @@ export default function AboutMeIntro() {
               {introduction.detail}
             </ReactMarkdown>
           </div>
+
+          {/* 핵심 가치 카드 */}
+          <ValueCards />
+
+          {/* 관심 분야 */}
+          <InterestTags />
         </div>
       </motion.div>
     </AnimatePresence>
