@@ -2,15 +2,27 @@ export const backend = [
   {
     title: '예외 처리 및 로깅',
     subtopics: [
-      { text: '블로그 내용 정리(핵심 열거)', link: '#' },
-      { text: '두번째 핵심 적기', link: '#' },
+      {
+        text: 'Checked Exception vs Runtime Exception',
+        link: 'https://codstudy.tistory.com/123',
+      },
+      { text: '커스텀 예외 사용', link: 'https://codstudy.tistory.com/124' },
     ],
   },
   {
     title: 'Spring Security와 JWT',
     subtopics: [
-      { text: '인증/인가 흐름 분석', link: '#' },
-      { text: '토큰 관리 전략', link: '#' },
+      // { text: '인증/인가 흐름 분석', link: '#' },
+      { text: 'OAuth 및 jwt', link: 'https://codstudy.tistory.com/84' },
+    ],
+  },
+  {
+    title: '기타',
+    subtopics: [
+      {
+        text: '@Transactional의 동작 원리',
+        link: 'https://codstudy.tistory.com/120',
+      },
     ],
   },
 ];
