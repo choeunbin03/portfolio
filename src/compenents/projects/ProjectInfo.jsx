@@ -75,7 +75,7 @@ const ProjectInfo = ({
       </div>
       <div className="w-full 2xl:w-auto mt-8 2xl:mt-0">
         <img
-          src="/tranner01/main_photo.PNG"
+          src="/tranner01/main_photo.png"
           className="w-full 2xl:w-[750px] h-auto 2xl:h-[550px] object-contain rounded-lg shadow-lg"
           alt="프로젝트 메인 이미지"
         />

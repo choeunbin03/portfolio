@@ -48,7 +48,10 @@ export const project02 = {
         partName: '외부 api 호출 시 최적화를 위한 redis 캐시 서버 사용',
         contribution: '100%',
       },
-      { partName: 'github action/AWS ECR을 사용한 CI', contribution: '100%' },
+      {
+        partName: 'github action/AWS ECR을 사용한 CI/CD',
+        contribution: '100%',
+      },
     ],
   },
   developEnvironment: [
@@ -82,7 +85,7 @@ export const project03 = {
         contribution: '100%',
       },
       {
-        partName: 'github action/Docker hub을 사용한 CI',
+        partName: 'github action/Docker hub을 사용한 CI/CD',
         contribution: '100%',
       },
       // {
