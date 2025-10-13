@@ -21,9 +21,10 @@ const InterestTags = () => {
         {interests.map((interest, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ delay: index * 0.05, duration: 0.3, ease: "easeOut" }}
             className="bg-white rounded-xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 hover:shadow-lg transition-all duration-300"
           >
             <h4 className="text-[15px] sm:text-[16px] md:text-lg font-bold text-point-main mb-3 sm:mb-4 flex items-center gap-2">

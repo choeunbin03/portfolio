@@ -8,13 +8,11 @@ export default function AboutMeIntro() {
   const { personalInfo, introduction } = useAboutMe();
 
   return (
-    <AnimatePresence>
+    <div>
       <motion.div
-        initial={{ opacity: 1, y: +30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1, y: +100 }}
-        transition={{ duration: 0.5 }}
-        className="overflow"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
       >
         <div className="flex items-center gap-2 sm:gap-3 mb-2">
           <div className="w-1 sm:w-1.5 h-8 sm:h-10 md:h-12 bg-point-main rounded-full"></div>
@@ -24,10 +22,9 @@ export default function AboutMeIntro() {
       </motion.div>
       
       <motion.div
-        initial={{ opacity: 1, x: -50 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 1, x: +100 }}
-        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
         className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-6 sm:gap-8 xl:gap-16 items-start"
       >
         {/* 프로필 카드 */}
@@ -83,6 +80,6 @@ export default function AboutMeIntro() {
           <InterestTags />
         </div>
       </motion.div>
-    </AnimatePresence>
+    </div>
   );
 }

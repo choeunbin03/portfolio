@@ -20,7 +20,7 @@ const WelcomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="absolute top-[120px] sm:top-[130px] md:top-[140px] lg:top-[160px] xl:top-[180px] left-4 sm:left-8 md:left-12 lg:left-20 font-istok-web text-black-b1 flex flex-col gap-3 sm:gap-4 text-left pr-4 z-10 max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-4rem)]"
+          className="absolute top-[180px] sm:top-[130px] md:top-[140px] lg:top-[160px] xl:top-[180px] left-4 sm:left-8 md:left-12 lg:left-20 font-istok-web text-black-b1 flex flex-col gap-3 sm:gap-4 text-left pr-4 z-10 max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-4rem)]"
         >
           {/* 작은 라벨 */}
           <motion.div
@@ -40,7 +40,7 @@ const WelcomePage = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="space-y-2"
           >
-            <h1 className="text-[50px] sm:text-[70px] md:text-[85px] lg:text-[95px] font-bold leading-none">
+            <h1 className="text-[45px] sm:text-[70px] md:text-[85px] lg:text-[95px] font-bold leading-none">
               <span className="text-point-main">Backend</span>
               <br />
               <span className="text-gray-800">Developer</span>
@@ -48,7 +48,7 @@ const WelcomePage = () => {
             <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
               <div className="w-0.5 sm:w-1 h-12 sm:h-16 bg-point-main rounded-full"></div>
               <div>
-                <p className="text-[32px] sm:text-[40px] md:text-[50px] font-bold leading-tight text-gray-800">조은빈</p>
+                <p className="text-[28px] sm:text-[40px] md:text-[50px] font-bold leading-tight text-gray-800">조은빈</p>
                 <p className="text-gray-600 text-xs sm:text-sm font-medium mt-1">Cho Eunbin</p>
               </div>
             </div>
@@ -59,7 +59,7 @@ const WelcomePage = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-[16px] sm:text-[20px] md:text-[25px] leading-relaxed text-gray-700 max-w-[600px] mt-2 break-keep"
+            className="text-[15px] sm:text-[20px] md:text-[25px] leading-relaxed text-gray-700 max-w-[600px] mt-2 break-keep"
           >
             책임감 있게, <span className="font-semibold text-point-main">사용자 중심</span>으로 고민하는 개발자가 되겠습니다.
           </motion.p>

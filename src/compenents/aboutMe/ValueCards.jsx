@@ -37,9 +37,10 @@ const ValueCards = () => {
         {values.map((value, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ delay: index * 0.05, duration: 0.3, ease: "easeOut" }}
             className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 hover:border-point-main/50 hover:shadow-lg transition-all duration-300 group"
           >
             <div className="flex items-start gap-3 sm:gap-4">

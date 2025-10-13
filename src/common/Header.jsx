@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 
-const linkBase = 'text-[13px] sm:text-[14px] hover:text-point-reverse transition-colors';
+const linkBase =
+  'text-[13px] sm:text-[14px] hover:text-point-reverse transition-colors whitespace-nowrap';
 const active = 'text-point-reverse font-semibold';
 
 const Header = () => {
@@ -9,11 +10,14 @@ const Header = () => {
       <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 sm:gap-0">
         {/* 로고 */}
         <div className="flex items-center">
-          <NavLink to="/" className="font-bold text-[24px] sm:text-[30px] text-white">
+          <NavLink
+            to="/"
+            className="font-bold text-[24px] sm:text-[30px] text-white"
+          >
             Eunbin Cho
           </NavLink>
         </div>
-        
+
         {/* 네비게이션 */}
         <nav className="flex justify-between sm:justify-end gap-2 sm:gap-4">
           <NavLink
@@ -23,7 +27,7 @@ const Header = () => {
               `${linkBase} ${isActive ? active : ''}`
             }
           >
-            01.Home
+            Home
           </NavLink>
 
           <NavLink
@@ -32,7 +36,7 @@ const Header = () => {
               `${linkBase} ${isActive ? active : ''}`
             }
           >
-            02.About&nbsp;me
+            About me
           </NavLink>
 
           <NavLink
@@ -41,7 +45,7 @@ const Header = () => {
               `${linkBase} ${isActive ? active : ''}`
             }
           >
-            03.Skills
+            Skills
           </NavLink>
 
           <NavLink
@@ -50,7 +54,7 @@ const Header = () => {
               `${linkBase} ${isActive ? active : ''}`
             }
           >
-            04.Projects
+            Projects
           </NavLink>
         </nav>
       </div>
