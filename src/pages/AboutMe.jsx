@@ -8,32 +8,34 @@ export default function AboutMe() {
   const { sections } = useAboutMe();
 
   return (
-    <div className="w-full justify-center flex flex-col items-center pr-10">
-      <div className="w-full mx-[120px] flex justify-center items-center relative">
-        <div className="w-[80%] h-full">
+    <div className="w-full justify-center flex flex-col items-center px-4 sm:px-6 md:pr-10">
+      <div className="w-full max-w-[1400px] flex justify-center items-center relative">
+        <div className="w-full md:w-[90%] lg:w-[80%] h-full">
           {/* 내 소개 */}
-          <div className="h-full pt-[150px]">
+          <div className="h-full pt-[100px] sm:pt-[120px] md:pt-[150px]">
             <AboutMeIntro />
           </div>
-          <div className="absolute mt-[100px] left-0">
+          
+          {/* Tech Marquee - 모바일에서는 숨김 */}
+          <div className="hidden md:block absolute mt-[100px] left-0">
             <TechMarquee />
           </div>
 
           {/* 학력 및 경력 */}
-          <div className="h-full mx-20 mt-[200px] mb-40 flex relative">
-            <div className=" flex flex-col">
+          <div className="h-full mx-0 sm:mx-4 md:mx-8 lg:mx-20 mt-[100px] sm:mt-[150px] md:mt-[200px] mb-20 sm:mb-32 md:mb-40 flex relative">
+            <div className="flex flex-col w-full">
               <AnimatePresence>
                 <motion.div
-                  initial={{ opacity: 1, x: +50 }} // 초기 상태
-                  whileInView={{ opacity: 1, x: 0 }} // 애니메이션 상태
-                  exit={{ opacity: 1, x: -100 }} // 종료 상태
-                  transition={{ duration: 0.5 }} // 애니메이션 지속 시간
+                  initial={{ opacity: 1, x: +50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 1, x: -100 }}
+                  transition={{ duration: 0.5 }}
                   className="w-full"
                 >
                   <div className="h-full text-left w-full">
                     {Object.entries(sections).map(([key, value]) => {
                       if (value && value.length > 0) {
-                        return <InfoComponents label={key} contents={value} />;
+                        return <InfoComponents key={key} label={key} contents={value} />;
                       }
                       return null;
                     })}
@@ -41,19 +43,9 @@ export default function AboutMe() {
                 </motion.div>
               </AnimatePresence>
             </div>
-            <img
-              src="3551.jpg"
-              className="hidden xl:block w-[350px] 2xl:w-[500px] h-auto absolute right-3 2xl:right-[50px] top-1/2 -translate-y-1/2"
-              alt="사진"
-            />
           </div>
-
-          {/* 내 강점 및 장점 어필 */}
-          <div></div>
-          {/* 취미 */}
         </div>
       </div>
-      {/* 내 정보 부분_end */}
     </div>
   );
 }

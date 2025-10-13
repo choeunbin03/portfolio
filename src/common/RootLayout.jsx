@@ -5,11 +5,13 @@ import Sidebar from './Sidebar';
 
 export default function RootLayout() {
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Sidebar />
-      {/* 자식 라우트가 그려질 자리 */}
-      <Outlet />
-    </>
+      {/* 메인 콘텐츠: 데스크톱에서는 우측 사이드바 공간 확보, 모바일에서는 전체 너비 */}
+      <main className="md:mr-[80px]">
+        <Outlet />
+      </main>
+    </div>
   );
 }

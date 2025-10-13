@@ -25,32 +25,32 @@ const ValueCards = () => {
   ];
 
   return (
-    <div className="mt-16">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="w-1 h-8 bg-point-main rounded-full"></div>
-        <h3 className="text-[28px] md:text-[32px] text-point-dark font-bold">
+    <div className="mt-8 sm:mt-12 md:mt-16">
+      <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+        <div className="w-0.5 sm:w-1 h-6 sm:h-7 md:h-8 bg-point-main rounded-full"></div>
+        <h3 className="text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] text-point-dark font-bold">
           핵심 가치
         </h3>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
         {values.map((value, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-6 border-2 border-gray-200 hover:border-point-main/50 hover:shadow-lg transition-all duration-300 group"
+            className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 hover:border-point-main/50 hover:shadow-lg transition-all duration-300 group"
           >
-            <div className="flex items-start gap-4">
-              <span className="text-4xl group-hover:scale-110 transition-transform duration-300">
+            <div className="flex items-start gap-3 sm:gap-4">
+              <span className="text-[28px] sm:text-[32px] md:text-4xl group-hover:scale-110 transition-transform duration-300">
                 {value.icon}
               </span>
               <div className="flex-1">
-                <h4 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-point-main transition-colors">
+                <h4 className="text-[16px] sm:text-[18px] md:text-xl font-bold text-gray-800 mb-1.5 sm:mb-2 group-hover:text-point-main transition-colors">
                   {value.title}
                 </h4>
-                <p className="text-gray-600 leading-relaxed break-keep">
+                <p className="text-[13px] sm:text-[14px] md:text-[15px] text-gray-600 leading-relaxed break-keep">
                   {value.description}
                 </p>
               </div>
