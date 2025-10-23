@@ -12,19 +12,21 @@ export default function AboutMeIntro() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         <div className="flex items-center gap-2 sm:gap-3 mb-2">
           <div className="w-1 sm:w-1.5 h-8 sm:h-10 md:h-12 bg-point-main rounded-full"></div>
-          <h1 className="text-[32px] sm:text-[40px] md:text-[50px] text-point-dark font-bold">About Me</h1>
+          <h1 className="text-[32px] sm:text-[40px] md:text-[50px] text-point-dark font-bold">
+            About Me
+          </h1>
         </div>
         <hr className="border-gray-300 border-t-2" />
       </motion.div>
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+        transition={{ duration: 0.4, delay: 0.1, ease: 'easeOut' }}
         className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-6 sm:gap-8 xl:gap-16 items-start"
       >
         {/* 프로필 카드 */}
@@ -35,16 +37,20 @@ export default function AboutMeIntro() {
             alt="증명사진"
           />
           <div className="space-y-2">
-            <p className="font-bold text-[20px] sm:text-[22px] md:text-[25px] text-gray-800">{personalInfo.name}</p>
+            <p className="font-bold text-[20px] sm:text-[22px] md:text-[25px] text-gray-800">
+              {personalInfo.name}
+            </p>
             <div className="space-y-1.5 text-gray-600">
               <p className="flex items-center gap-2 text-[14px] sm:text-[15px] md:text-[17px]">
                 <span className="text-point-main">🎂</span> {personalInfo.birth}
               </p>
               <p className="flex items-center gap-2 text-[14px] sm:text-[15px] md:text-[17px] break-all">
-                <span className="text-point-main">📧</span> {personalInfo.contact.email}
+                <span className="text-point-main">📧</span>{' '}
+                {personalInfo.contact.email}
               </p>
               <p className="flex items-center gap-2 text-[14px] sm:text-[15px] md:text-[17px]">
-                <span className="text-point-main">📞</span> {personalInfo.contact.phone}
+                <span className="text-point-main">📞</span>{' '}
+                {personalInfo.contact.phone}
               </p>
             </div>
           </div>
@@ -58,15 +64,20 @@ export default function AboutMeIntro() {
               {introduction.headline}
             </h2>
           </div>
-          
+
           {/* 상세 소개 */}
           <div className="prose prose-sm sm:prose-base md:prose-lg max-w-none text-[14px] sm:text-[15px] md:text-[16px] lg:text-[18px] leading-relaxed break-keep text-gray-700">
             <ReactMarkdown
               components={{
                 strong: ({ node, ...props }) => (
-                  <strong className="text-point-main font-semibold" {...props} />
+                  <strong
+                    className="text-point-main font-semibold"
+                    {...props}
+                  />
                 ),
-                p: ({ node, ...props }) => <p className="my-3 sm:my-4" {...props} />,
+                p: ({ node, ...props }) => (
+                  <p className="my-3 sm:my-4" {...props} />
+                ),
               }}
             >
               {introduction.detail}
@@ -77,7 +88,7 @@ export default function AboutMeIntro() {
           <ValueCards />
 
           {/* 관심 분야 */}
-          <InterestTags />
+          {/* <InterestTags /> */}
         </div>
       </motion.div>
     </div>

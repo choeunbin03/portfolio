@@ -15,14 +15,9 @@ export default function AboutMe() {
           <div className="h-full pt-[100px] sm:pt-[120px] md:pt-[150px]">
             <AboutMeIntro />
           </div>
-          
-          {/* Tech Marquee - 모바일에서는 숨김 */}
-          <div className="hidden md:block absolute mt-[100px] left-0">
-            <TechMarquee />
-          </div>
 
           {/* 학력 및 경력 */}
-          <div className="h-full mx-0 sm:mx-4 md:mx-8 lg:mx-20 mt-[100px] sm:mt-[150px] md:mt-[200px] mb-20 sm:mb-32 md:mb-40 flex relative">
+          <div className="h-full mx-0 sm:mx-4 md:mx-8 lg:mx-20 mt-20 sm:mt-8 md:mt-10 mb-20 sm:mb-32 md:mb-40 flex relative">
             <div className="flex flex-col w-full">
               <AnimatePresence>
                 <motion.div
@@ -35,7 +30,13 @@ export default function AboutMe() {
                   <div className="h-full text-left w-full">
                     {Object.entries(sections).map(([key, value]) => {
                       if (value && value.length > 0) {
-                        return <InfoComponents key={key} label={key} contents={value} />;
+                        return (
+                          <InfoComponents
+                            key={key}
+                            label={key}
+                            contents={value}
+                          />
+                        );
                       }
                       return null;
                     })}

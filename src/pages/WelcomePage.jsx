@@ -8,7 +8,7 @@ const WelcomePage = () => {
     <div className="w-full min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
       {/* 배경 패턴 */}
       <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_calc(16.66%-1px),rgba(0,0,128,0.03)_calc(16.66%-1px),rgba(0,0,128,0.03)_16.66%)]"></div>
-      
+
       {/* 장식적 요소들 */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-point-main/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-32 left-32 w-96 h-96 bg-point-reverse/10 rounded-full blur-3xl"></div>
@@ -19,7 +19,7 @@ const WelcomePage = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="absolute top-[180px] sm:top-[130px] md:top-[140px] lg:top-[160px] xl:top-[180px] left-4 sm:left-8 md:left-12 lg:left-20 font-istok-web text-black-b1 flex flex-col gap-3 sm:gap-4 text-left pr-4 z-10 max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-4rem)]"
         >
           {/* 작은 라벨 */}
@@ -30,7 +30,9 @@ const WelcomePage = () => {
             className="flex items-center gap-2"
           >
             <div className="w-8 sm:w-12 h-0.5 bg-point-main"></div>
-            <span className="text-xs sm:text-sm font-semibold text-point-main tracking-wider uppercase">Portfolio 2025</span>
+            <span className="text-xs sm:text-sm font-semibold text-point-main tracking-wider uppercase">
+              Portfolio
+            </span>
           </motion.div>
 
           {/* 메인 타이틀 */}
@@ -48,8 +50,12 @@ const WelcomePage = () => {
             <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
               <div className="w-0.5 sm:w-1 h-12 sm:h-16 bg-point-main rounded-full"></div>
               <div>
-                <p className="text-[28px] sm:text-[40px] md:text-[50px] font-bold leading-tight text-gray-800">조은빈</p>
-                <p className="text-gray-600 text-xs sm:text-sm font-medium mt-1">Cho Eunbin</p>
+                <p className="text-[28px] sm:text-[40px] md:text-[50px] font-bold leading-tight text-gray-800">
+                  조은빈
+                </p>
+                <p className="text-gray-600 text-xs sm:text-sm font-medium mt-1">
+                  Cho Eunbin
+                </p>
               </div>
             </div>
           </motion.div>
@@ -61,7 +67,9 @@ const WelcomePage = () => {
             transition={{ delay: 0.7, duration: 0.8 }}
             className="text-[15px] sm:text-[20px] md:text-[25px] leading-relaxed text-gray-700 max-w-[600px] mt-2 break-keep"
           >
-            책임감 있게, <span className="font-semibold text-point-main">사용자 중심</span>으로 고민하는 개발자가 되겠습니다.
+            책임감 있게,{' '}
+            <span className="font-semibold text-point-main">사용자 중심</span>
+            으로 고민하는 개발자가 되겠습니다.
           </motion.p>
 
           {/* CTA 버튼 */}
@@ -85,8 +93,8 @@ const WelcomePage = () => {
               "
             >
               <span>See My Projects</span>
-              <HiOutlineArrowNarrowRight 
-                size={24} 
+              <HiOutlineArrowNarrowRight
+                size={24}
                 strokeWidth={2}
                 className="group-hover:translate-x-2 transition-transform duration-300"
               />
