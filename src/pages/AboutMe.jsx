@@ -7,11 +7,11 @@ export default function AboutMe() {
   const { sections } = useAboutMe();
 
   return (
-    <div className="w-full justify-center flex flex-col items-center px-4 sm:px-6 md:pr-10">
+    <div className="w-full justify-center flex flex-col items-center px-10 sm:px-8 md:pr-10">
       <div className="w-full max-w-[1400px] flex justify-center items-center relative">
         <div className="w-full md:w-[90%] lg:w-[80%] h-full">
           {/* 내 소개 */}
-          <div className="h-full pt-[100px] sm:pt-[120px] md:pt-[150px]">
+          <div className="h-full pt-[130px] sm:pt-[120px] md:pt-[150px]">
             <AboutMeIntro />
           </div>
 

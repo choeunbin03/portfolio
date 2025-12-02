@@ -30,7 +30,7 @@ export default function AboutMeIntro() {
         className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-6 sm:gap-8 xl:gap-16 items-start"
       >
         {/* 프로필 카드 */}
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 shadow-lg mx-auto xl:mx-0 w-full max-w-[280px] sm:max-w-[300px]">
+        <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 shadow-lg mx-auto xl:mx-0 w-full max-w-[250px] sm:max-w-[250px]">
           <img
             src="조은빈.jpg"
             className="w-full rounded-lg shadow-md mb-4 sm:mb-5"
@@ -85,7 +85,7 @@ export default function AboutMeIntro() {
           </div>
 
           {/* 핵심 가치 카드 */}
-          <ValueCards />
+          {/* <ValueCards /> */}
 
           {/* 관심 분야 */}
           {/* <InterestTags /> */}
