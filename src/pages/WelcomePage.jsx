@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
-import TechMarquee from '../components/TechMarquee';
 
 const WelcomePage = () => {
   return (
-    <div className="w-full min-h-screen relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100">
-      {/* 배경 패턴 */}
-      <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent,transparent_calc(16.66%-1px),rgba(0,0,128,0.03)_calc(16.66%-1px),rgba(0,0,128,0.03)_16.66%)]"></div>
-
-      {/* 장식적 요소들 */}
-      <div className="absolute top-20 right-20 w-72 h-72 bg-point-main/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-32 left-32 w-96 h-96 bg-point-reverse/10 rounded-full blur-3xl"></div>
-
+    <div className="w-full min-h-screen overflow-hidden bg-white flex items-center justify-center">
       <AnimatePresence>
         {/* 메인 컨텐츠 */}
         <motion.div
@@ -20,98 +12,96 @@ const WelcomePage = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="absolute top-[180px] sm:top-[130px] md:top-[140px] lg:top-[160px] xl:top-[180px] left-4 sm:left-8 md:left-12 lg:left-20 font-istok-web text-black-b1 flex flex-col gap-3 sm:gap-4 text-left pr-4 z-10 max-w-[calc(100%-2rem)] sm:max-w-[calc(100%-4rem)]"
         >
-          {/* 작은 라벨 */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="flex items-center gap-2"
-          >
-            <div className="w-8 sm:w-12 h-0.5 bg-point-main"></div>
-            <span className="text-xs sm:text-sm font-semibold text-point-main tracking-wider uppercase">
-              Portfolio
-            </span>
-          </motion.div>
-
-          {/* 메인 타이틀 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="space-y-2"
-          >
-            <h1 className="text-[45px] sm:text-[70px] md:text-[85px] lg:text-[95px] font-bold leading-none">
-              <span className="text-point-main">Backend</span>
-              <br />
-              <span className="text-gray-800">Developer</span>
-            </h1>
-            <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-              <div className="w-0.5 sm:w-1 h-12 sm:h-16 bg-point-main rounded-full"></div>
-              <div>
-                <p className="text-[28px] sm:text-[40px] md:text-[50px] font-bold leading-tight text-gray-800">
-                  조은빈
-                </p>
-                <p className="text-gray-600 text-xs sm:text-sm font-medium mt-1">
-                  Cho Eunbin
-                </p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* 서브 타이틀 */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="text-[15px] sm:text-[20px] md:text-[25px] leading-relaxed text-gray-700 max-w-[600px] mt-2 break-keep"
-          >
-            책임감 있게,{' '}
-            <span className="font-semibold text-point-main">사용자 중심</span>
-            으로 고민하는 개발자가 되겠습니다.
-          </motion.p>
-
-          {/* CTA 버튼 */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.6 }}
-            className="mt-1 sm:mt-3 md:mt-4"
-          >
-            <Link
-              to="/projects"
-              className="
-                group inline-flex items-center gap-2 sm:gap-3 
-                px-6 sm:px-8 py-3 sm:py-4 rounded-xl
-                bg-gradient-to-r from-point-main to-point-dark
-                text-white font-bold text-[15px] sm:text-[18px]
-                shadow-lg hover:shadow-2xl
-                transition-all duration-300
-                hover:scale-105
-                active:scale-95
-              "
+          <div className="max-w-8xl">
+            {/* 상단 라벨 */}
+            <div></div>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="flex items-center gap-3 mb-8 sm:mb-10"
             >
-              <span>See My Projects</span>
-              <HiOutlineArrowNarrowRight
-                size={24}
-                strokeWidth={2}
-                className="group-hover:translate-x-2 transition-transform duration-300"
-              />
-            </Link>
-          </motion.div>
+              <div className="w-12 sm:w-16 h-1 bg-point-main"></div>
+              <span className="text-sm sm:text-base font-bold text-point-main tracking-wider">
+                PORTFOLIO
+              </span>
+            </motion.div>
+
+            {/* 메인 컨텐츠 - 2열 레이아웃 */}
+            <div className=" grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-4 sm:gap-6 lg:gap-8 items-end">
+              {/* 왼쪽: 타이틀 */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              >
+                <h1 className="text-left text-[56px] sm:text-[72px] md:text-[88px] lg:text-[100px] xl:text-[110px] font-bold leading-[0.95] text-point-dark mb-6 lg:border-r-4 border-point-dark">
+                  Backend
+                  <br />
+                  Developer
+                </h1>
+              </motion.div>
+
+              {/* 오른쪽: 이름 및 설명 */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.8 }}
+                className="space-y-2 sm:space-y-1 lg:pb-6 xl:pb-10 flex-row justify-items-start "
+              >
+                <div>
+                  <div className="text-left">
+                    <h2 className="text-[22px] sm:text-[28px] md:text-[32px] lg:text-[40px] font-bold text-gray-900">
+                      조은빈
+                    </h2>
+                    <p className="text-gray-500 text-base sm:text-lg">
+                      Cho Eunbin
+                    </p>
+                  </div>
+
+                  <p className="text-left text-[14px] sm:text-[16px] md:text-[18px] leading-relaxed text-gray-700">
+                    안녕하세요, 개발자 조은빈입니다.
+                    <br />
+                    책임감 있게,{' '}
+                    <span className="font-bold text-gray-900">사용자 중심</span>
+                    으로 고민하는 개발자가 되겠습니다.
+                  </p>
+                </div>
+
+                {/* CTA 버튼 */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.8, duration: 0.6 }}
+                  className=""
+                >
+                  <Link
+                    to="/projects"
+                    className="
+                  group inline-flex items-center gap-3 
+                  px-4 py-2 rounded-xl
+                  bg-point-main text-white
+                  font-semibold text-[15px] sm:text-[16px]
+                  hover:bg-point-dark
+                  transition-all duration-300
+                  shadow-lg hover:shadow-xl
+                  mt-2
+                "
+                  >
+                    <span>See My Projects</span>
+                    <HiOutlineArrowNarrowRight
+                      size={20}
+                      strokeWidth={2.5}
+                      className="group-hover:translate-x-1 transition-transform duration-300"
+                    />
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </div>
+          </div>
         </motion.div>
       </AnimatePresence>
-
-      {/* Tech Stack Marquee */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-        className="absolute left-0 right-0 bottom-12 sm:bottom-16 md:bottom-20 z-0"
-      >
-        <TechMarquee />
-      </motion.div>
     </div>
   );
 };
