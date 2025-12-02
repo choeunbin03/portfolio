@@ -16,7 +16,7 @@ export default function AboutMe() {
           </div>
 
           {/* 학력 및 경력 */}
-          <div className="h-full mx-0 sm:mx-4 md:mx-8 lg:mx-20 mt-20 sm:mt-8 md:mt-10 mb-20 sm:mb-32 md:mb-40 flex relative">
+          <div className="h-full mx-0 mt-16 sm:mt-8 md:mt-10 mb-20 sm:mb-32 md:mb-40 flex relative">
             <div className="flex flex-col w-full">
               <AnimatePresence>
                 <motion.div

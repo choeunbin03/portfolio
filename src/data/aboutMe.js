@@ -1,11 +1,13 @@
 // src/data/aboutMe.ts
 export const personalInfo = {
   name: '조은빈',
+  position: 'Backend Developer',
   birth: '2003.03.24',
   contact: {
     email: 'choeunbiin03@naver.com',
     phone: '010-9332-3488',
   },
+  github: 'https://github.com/choeunbin03',
 };
 
 export const introduction = {
@@ -22,7 +24,12 @@ export const sections = {
     { content: '숭실대 소프트웨어학부', period: '2022.03 ~ 2026.02' },
   ],
   career: [],
-  award: [],
+  award: [
+    {
+      content: '교내 2025 제 3회 IT 프로젝트 공모전 장려상',
+      period: '2025.05 ~ 2025.11',
+    },
+  ],
   active: [
     {
       content: '2025 블레이버스 MVP 개발 해커톤 참가',
@@ -31,10 +38,6 @@ export const sections = {
     {
       content: '생성형AI와 AI에이전트 개발 교육 (교내 비교과 프로그램)',
       period: '2025.06.30 ~ 2025.07.02',
-    },
-    {
-      content: '교내 2025 제 3회 IT 프로젝트 공모전 참가',
-      period: '2025.05 ~ 2025.11',
     },
   ],
   certificate: [

@@ -83,11 +83,10 @@ const WelcomePage = () => {
                     className="
                   group inline-flex items-center gap-3 
                   px-4 py-2 rounded-xl
-                  bg-point-main text-white
-                  font-semibold text-[15px] sm:text-[16px]
-                  hover:bg-point-dark
+                  bg-white border text-point-main
+                  font-semibold text-[15px] sm:text-[16px]                  
                   transition-all duration-300
-                  shadow-lg hover:shadow-xl
+                  shadow-md hover:shadow-xl
                   mt-2
                 "
                   >
