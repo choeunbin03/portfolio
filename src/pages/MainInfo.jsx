@@ -1,6 +1,6 @@
-// import InfoComponents from '../compenents/InfoComponents';
+// import InfoComponents from '../components/InfoComponents';
 // import { motion, AnimatePresence } from 'framer-motion';
-// import ProjectListComponents from '../compenents/ProjectListComponent';
+// import ProjectListComponents from '../components/ProjectListComponent';
 // import Projects from './Projects';
 
 // const MainInfo = () => {

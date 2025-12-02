@@ -1,8 +1,8 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAboutMe } from '../hooks/useAboutMe';
-import InfoComponents from '../compenents/aboutMe/InfoComponents';
-import AboutMeIntro from '../compenents/aboutMe/AboutMeIntro';
-import TechMarquee from '../compenents/TechMarquee';
+import InfoComponents from '../components/aboutMe/InfoComponents';
+import AboutMeIntro from '../components/aboutMe/AboutMeIntro';
+import TechMarquee from '../components/TechMarquee';
 
 export default function AboutMe() {
   const { sections } = useAboutMe();

@@ -33,23 +33,29 @@ export const project02 = {
   period: '2025.03.04 ~ 2025.07.20',
   lastUpdate: '2025.07.20',
   mainImage: '/projects/project02/main_photo.png',
-  headCount: { BE: 3, FE: 2 },
+  headCount: { BE: 1, FE: 1, AI: 3 },
   detailPart: {
     BE: [
       {
-        partName: 'Spring Cloud Eureka 및 AWS ECS를 사용한 MSA 구조 적용',
+        partName:
+          'Spring Cloud Eureka + AWS ECS기반의 MSA 구조 설계 및 서비스 배포',
         contribution: '100%',
       },
       {
-        partName: '로그인 및 회원가입(소셜 로그인 기능 포함)',
+        partName: '로그인/회원가입 및 인증/인가 로직 구현',
         contribution: '100%',
       },
       {
-        partName: '외부 api 호출 시 최적화를 위한 redis 캐시 서버 사용',
+        partName: '외부 API 호출 시 성능 개선을 위한 Redis 기반 캐싱 적용',
         contribution: '100%',
       },
       {
-        partName: 'github action/AWS ECR을 사용한 CI/CD',
+        partName: 'Github Actions + AWS ECR을 사용한 CI/CD',
+        contribution: '100%',
+      },
+      {
+        partName:
+          '프론트 개발자와 협업을 위한 API 에러 응답 스펙을 정의하고 문서화하여 일관된 오류 처리 체계 구축',
         contribution: '100%',
       },
     ],
@@ -66,26 +72,25 @@ export const project03 = {
   name: 'Phraiz',
   part: 'BE',
   info: 'AI 패러프레이징/요약, 인용 생성을 통한 통합 글쓰기 지원 플랫폼',
-  period: '2025.05.23 ~ ',
+  period: '2025.05.23 ~ 2025.11.20',
   lastUpdate: '-',
-  mainImage: '/projects/project02/main_photo.png',
+  mainImage: '/projects/project03/main_photo.PNG',
   headCount: { BE: 2, FE: 2 },
   detailPart: {
     BE: [
       {
-        partName: '공통 기능 구현',
+        partName:
+          '패러프레이징/요약/인용 기능에서 공통되는 폴더/히스토리 로직을 추상화하여 공통 레이어로 분리, 도메인별로 확장하여 사용할 수 있는 구조 설계',
         contribution: '100%',
       },
       {
-        partName: 'open ai api를 사용한 ai 패러프레이징/요약 기능 구현',
+        partName:
+          'OpenAI API 기반 AI 패러프레이징/요약 기능 구현 및 프롬프트 구조 개선으로 응답 품질 향상',
         contribution: '100%',
       },
       {
-        partName: 'toss payment를 활용한 결제 관련 기능 구현',
-        contribution: '100%',
-      },
-      {
-        partName: 'github action/Docker hub을 사용한 CI/CD',
+        partName:
+          ' Toss Payments 연동을 통한 결제 승인/취소 등 결제 플로우 구현',
         contribution: '100%',
       },
       // {

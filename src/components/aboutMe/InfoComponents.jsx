@@ -15,7 +15,7 @@ const InfoComponents = ({ label, contents }) => {
           {contents.map((el, i) => (
             <li
               key={i}
-              className="flex flex-col md:grid md:grid-cols-[auto_1fr] md:items-baseline md:gap-x-6 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0 last:pb-0"
+              className="flex flex-col md:grid md:grid-cols-[auto_1fr] md:items-baseline md:gap-x-14 pb-3 sm:pb-4 border-b border-gray-200 last:border-b-0 last:pb-0"
             >
               {/* 기간 */}
               <span className="text-point-main font-semibold tabular-nums whitespace-nowrap text-[13px] sm:text-[14px] md:text-base w-full md:w-[140px] mb-1 md:mb-0">

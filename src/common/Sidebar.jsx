@@ -2,7 +2,7 @@ import { FaGithub } from 'react-icons/fa';
 import { SiTistory } from 'react-icons/si';
 import { HiOutlineMail } from 'react-icons/hi';
 import { useState } from 'react';
-import ContactModal from '../compenents/ContactModal';
+import ContactModal from '../components/ContactModal';
 
 const Sidebar = () => {
   const github = 'https://github.com/choeunbin03';

@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import SkillsComponents from '../compenents/SkillsComponents';
+import SkillsComponents from '../components/SkillsComponents';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSkills } from '../hooks/useSkills';
 import { useStudy } from '../hooks/useStudy';
-import StudyCard from '../compenents/StudyCard';
+import StudyCard from '../components/StudyCard';
 
 const Skills = () => {
   const { strong, knowledgeable, experienced } = useSkills();

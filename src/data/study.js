@@ -14,6 +14,10 @@ export const backend = [
     subtopics: [
       // { text: '인증/인가 흐름 분석', link: '#' },
       { text: 'OAuth 및 jwt', link: 'https://codstudy.tistory.com/84' },
+      {
+        text: 'Spring security Oauth 디버깅 기록',
+        link: 'https://codstudy.tistory.com/54',
+      },
     ],
   },
   {
@@ -63,14 +67,14 @@ export const devops = [
 
 export const productivity = [
   {
-    title: 'ChatGPT API 활용',
+    title: 'LangChian 및 RAG',
     subtopics: [
       { text: '개발 작업 자동화 스크립트', link: '#' },
       { text: '코드 리뷰 및 문서 요약', link: '#' },
     ],
   },
   {
-    title: 'VS Code 확장 프로그램 개발',
+    title: 'Claude MCP 및 codex 사용',
     subtopics: [
       { text: '코드 스니펫 자동 생성 기능', link: '#' },
       { text: '단축키 커스터마이징', link: '#' },

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectInfo from '../../components/projects/ProjectInfo';
-import Tranner01Parts from '../../components/projects/Tranner01_parts';
+import PhraizParts from '../../components/projects/Phraiz_parts';
 import ProjectReview from '../../components/projects/ProjectReview';
 import { useProjectData } from '../../hooks/useProjectDetails';
 
-const Tranner01 = () => {
-  const projectData = useProjectData('Tranner01');
+const Phraiz = () => {
+  const projectData = useProjectData('Phraiz');
   const [activeDocTab, setActiveDocTab] = useState(0);
 
   if (!projectData) {
@@ -34,7 +34,7 @@ const Tranner01 = () => {
                 {/* 왼쪽: 프로젝트 정보 */}
                 <div className="w-full lg:w-1/3 flex flex-col justify-center">
                   {/* 프로젝트 제목 */}
-                  <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-bold mb-3 sm:mb-4 leading-tight text-point-main">
+                  <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-bold mb-3 sm:mb-4 leading-tight text-[#702ff3]">
                     {projectData.title}
                   </h1>
 
@@ -81,7 +81,7 @@ const Tranner01 = () => {
                         href={projectData.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-point-main to-point-main/80 text-white rounded-lg font-semibold text-[14px] sm:text-[16px] hover:shadow-lg hover:scale-105 transition-all duration-300"
+                        className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#702ff3] to-[#702ff3]/80 text-white rounded-lg font-semibold text-[14px] sm:text-[16px] hover:shadow-lg hover:scale-105 transition-all duration-300"
                       >
                         <span>사용해보기</span>
                       </a>
@@ -221,7 +221,7 @@ const Tranner01 = () => {
                     담당 파트
                   </h3>
                 </div>
-                <Tranner01Parts parts={projectData.parts} />
+                <PhraizParts parts={projectData.parts} />
               </div>
 
               {/* 회고 */}
@@ -242,4 +242,4 @@ const Tranner01 = () => {
   );
 };
 
-export default Tranner01;
+export default Phraiz;

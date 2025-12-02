@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
-import TechMarquee from '../compenents/TechMarquee';
+import TechMarquee from '../components/TechMarquee';
 
 const WelcomePage = () => {
   return (
