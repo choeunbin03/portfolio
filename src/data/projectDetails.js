@@ -173,7 +173,7 @@ export const tranner02Data = {
   parts: [
     {
       title: 'Spring Cloud + MSA 아키텍처 설계',
-      images: ['msa_architecture.png', 'eureka_dashboard.png'],
+      images: [],
       description: [
         'Spring Cloud Eureka Server를 활용한 서비스 디스커버리 구현',
         'Account Server, External API Server로 서비스 분리',
@@ -183,7 +183,7 @@ export const tranner02Data = {
     },
     {
       title: 'JWT + OAuth 2.0 기반 인증/인가',
-      images: ['jwt_auth_flow.png', 'oauth_integration.png'],
+      images: [],
       description: [
         'Access Token(15분)과 Refresh Token(7일) 기반 2-Token 인증 전략 구현',
         'Kakao, Google OAuth 2.0 소셜 로그인 연동',
@@ -193,7 +193,7 @@ export const tranner02Data = {
     },
     {
       title: 'Redis 기반 캐싱',
-      images: ['caching_strategy.png', 'api_proxy.png'],
+      images: [],
       description: [
         'Google Places API 프록시 서버 구축으로 API 호출 최적화',
         '캐시 미스 시에만 API 호출',
@@ -298,7 +298,7 @@ export const phraizData = {
   parts: [
     {
       title: 'GPT API 프롬프트 엔지니어링',
-      images: ['gpt_prompt_structure.png', 'tone_blend_system.png'],
+      images: [],
       description: [
         '역할-목표-규칙-지침-출력의 5단계 구조화된 프롬프트 템플릿 설계',
         '모드별(표준/학술/창의적/유창형/문학적) 가이드라인 정의',
@@ -308,7 +308,7 @@ export const phraizData = {
     },
     {
       title: '인프라 구축 및 운영',
-      images: ['infrastructure_architecture.png', 'cicd_pipeline.png'],
+      images: [],
       description: [
         'AWS EC2, RDS를 활용한 서버 인프라 설계 및 구축',
         'Docker 컨테이너화 및 Nginx 리버스 프록시 설정',
@@ -318,7 +318,7 @@ export const phraizData = {
     },
     {
       title: '폴더 및 히스토리 공통 기능 구현',
-      images: ['folder_history_structure.png', 'common_api_design.png'],
+      images: [],
       description: [
         '패러프레이징, 요약, 인용 생성 결과의 통합 저장 시스템 설계',
         '공통 컴포넌트화를 통한 코드 재사용성 향상',
@@ -326,7 +326,7 @@ export const phraizData = {
     },
     {
       title: '토스 페이먼츠 결제 시스템 연동',
-      images: ['payment_flow.png', 'toss_api_integration.png'],
+      images: [],
       description: [
         '토스 페이먼츠 API를 활용한 구독 결제 시스템 구현',
         '결제 승인, 취소, 환불 프로세스 구현',

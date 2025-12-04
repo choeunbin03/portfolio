@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 /**
  * Props
@@ -9,11 +10,12 @@ import React, { useEffect, useRef, useState } from 'react';
  */
 
 const ContactModal = ({ open, onClose, onSend }) => {
+  const apiKey = process.env.REACT_APP_EMAIL_JS_KEY;
+
   const [sending, setSending] = useState(false);
   const [form, setForm] = useState({
-    name: '',
-    email: '',
-    subject: '',
+    from_email: '',
+    title: '',
     message: '',
   });
 
@@ -31,22 +33,20 @@ const ContactModal = ({ open, onClose, onSend }) => {
   };
 
   const validate = () => {
-    if (!form.name.trim()) return '이름을 입력해 주세요.';
-    if (!/^\S+@\S+\.\S+$/.test(form.email))
+    if (!/^\S+@\S+\.\S+$/.test(form.from_email))
       return '올바른 이메일을 입력해 주세요.';
-    if (!form.subject.trim()) return '제목을 입력해 주세요.';
+    if (!form.title.trim()) return '제목을 입력해 주세요.';
     if (!form.message.trim()) return '메시지를 입력해 주세요.';
     return null;
   };
 
-  // 전송 로직: onSend 가 주어지면 그것을 사용, 아니면 예시 fetch 사용
-  const defaultSend = async () => {
-    // 예시: 백엔드 라우트로 POST (원하는 API로 바꿔 사용)
-    await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    });
+  const sendEmail = async (formData) => {
+    return emailjs.send(
+      'choeunbin_contact',
+      'template_lqscmhe',
+      formData, // 이제 formData의 키가 EmailJS 템플릿 변수와 일치
+      apiKey
+    );
   };
 
   const handleSubmit = async (e) => {
@@ -58,13 +58,9 @@ const ContactModal = ({ open, onClose, onSend }) => {
     }
     try {
       setSending(true);
-      if (onSend) {
-        await onSend(form);
-      } else {
-        await defaultSend();
-      }
+      await sendEmail(form);
       alert('메시지가 전송되었습니다. 감사합니다!');
-      setForm({ name: '', email: '', subject: '', message: '' });
+      setForm({ email: '', subject: '', message: '' });
       onClose();
     } catch (error) {
       console.error(error);
@@ -121,28 +117,13 @@ const ContactModal = ({ open, onClose, onSend }) => {
         {/* 폼 */}
         <form onSubmit={handleSubmit} className="p-6 md:p-7">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {/* Name */}
-            <label className="flex flex-col gap-1">
-              <span className="text-sm text-slate-600">Name</span>
-              <input
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                className="
-                  h-11 rounded-lg border border-slate-300 px-3
-                  focus:outline-none focus:ring-2 focus:ring-blue-500/60
-                "
-              />
-            </label>
-
             {/* Email */}
-            <label className="flex flex-col gap-1">
+            <label className="md:col-span-2 flex flex-col gap-1">
               <span className="text-sm text-slate-600">Email</span>
               <input
                 type="email"
-                name="email"
-                value={form.email}
+                name="from_email"
+                value={form.from_email}
                 onChange={handleChange}
                 placeholder="you@example.com"
                 className="
@@ -156,8 +137,8 @@ const ContactModal = ({ open, onClose, onSend }) => {
             <label className="md:col-span-2 flex flex-col gap-1">
               <span className="text-sm text-slate-600">Subject</span>
               <input
-                name="subject"
-                value={form.subject}
+                name="title"
+                value={form.title}
                 onChange={handleChange}
                 placeholder="Subject"
                 className="
@@ -199,12 +180,11 @@ const ContactModal = ({ open, onClose, onSend }) => {
               type="submit"
               disabled={sending}
               className="
-  h-11 px-6 rounded-lg text-white font-semibold
-  bg-gradient-to-r from-point-dark via-point-dark/80 to-point-dark/60
-  hover:opacity-95 active:translate-y-[1px]
-  disabled:opacity-50 disabled:cursor-not-allowed
-  shadow-md
-"
+                h-11 px-6 rounded-lg text-white font-semibold bg-point-dark
+                hover:opacity-95 active:translate-y-[1px]
+                disabled:opacity-50 disabled:cursor-not-allowed
+                shadow-md
+              "
             >
               {sending ? 'Sending…' : 'Send'}
             </button>
