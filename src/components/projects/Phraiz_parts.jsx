@@ -1,80 +1,85 @@
-import { useState } from 'react';
-
 const PhraizParts = ({ parts }) => {
-  const [activeTab, setActiveTab] = useState(0);
-
   if (!parts || parts.length === 0) {
     return null;
   }
 
   return (
     <div className="w-full">
-      {/* 탭 네비게이션 */}
-      <div className="flex border-b-2 border-gray-200 mb-6 sm:mb-8">
-        {parts.map((part, index) => (
-          <button
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={`px-4 sm:px-6 py-3 sm:py-4 text-[14px] sm:text-[15px] md:text-base font-medium transition-all duration-300 relative ${
-              activeTab === index
-                ? 'text-point-main'
-                : 'text-gray-500 hover:text-gray-700'
-            }`}
-          >
-            {part.title}
-            {/* 활성 탭 하단 바 */}
-            {activeTab === index && (
-              <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-point-main">
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-point-main translate-y-full"></div>
-              </div>
-            )}
-          </button>
-        ))}
-      </div>
-
-      {/* 선택된 탭 콘텐츠 */}
-      <div className="group">
-        {/* 이미지 컨테이너 */}
-        <div
-          className={`mb-4 sm:mb-6 ${
-            parts[activeTab].images.length > 1
-              ? 'grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5'
-              : 'flex justify-center'
-          }`}
-        >
-          {parts[activeTab].images.map((image, imgIndex) => (
-            <div
-              key={imgIndex}
-              className="relative overflow-hidden rounded-xl border border-gray-200 shadow-md h-[300px] sm:h-[350px] md:h-[400px] bg-gray-50 hover:shadow-lg hover:border-point-main/50 transition-all duration-300"
-            >
-              <img
-                src={`/tranner01/${image}`}
-                alt={`${parts[activeTab].title} - ${imgIndex + 1}`}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* 설명 박스 */}
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 md:p-6 border border-gray-200">
-          <div className="flex items-center gap-2 mb-3 sm:mb-4">
-            <div className="w-1 sm:w-1.5 h-1.5 rounded-full bg-point-main"></div>
-            <span className="text-[13px] sm:text-[14px] md:text-[15px] font-semibold text-gray-700">
-              구현 내용
+      {/* 단일 카드 */}
+      <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-gray-200 shadow-sm">
+        {/* 팀장 역할 섹션 */}
+        <div className="mb-6 sm:mb-8 pb-6 sm:pb-8 border-b border-gray-200">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[16px] sm:text-[17px] md:text-[18px] font-bold text-gray-800">
+              팀장 역할
             </span>
           </div>
-          <ul className="space-y-2 sm:space-y-2.5 md:space-y-3">
-            {parts[activeTab].description.map((desc, descIndex) => (
-              <li key={descIndex} className="flex items-start group/item">
-                <span className="text-point-main mr-2 sm:mr-3 mt-1 font-bold text-[12px] sm:text-[13px] md:text-sm">
-                  ▹
-                </span>
-                <span className="text-gray-700 leading-relaxed text-[13px] sm:text-[14px] md:text-[15px] break-keep">
-                  {desc}
-                </span>
-              </li>
-            ))}
+          <ul className="space-y-2.5 sm:space-y-3">
+            <li className="flex items-start gap-3">
+              <span className="text-point-main mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                WBS 작성 및 일정 관리
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-point-main mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                Slack을 통한 로그 전송 시스템 구축
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-point-main mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                팀 미팅 주도 및 진행 상황 모니터링
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        {/* 기술 담당 섹션 */}
+        <div>
+          <div className="flex items-center gap-2 mb-4">
+            <span className="text-[16px] sm:text-[17px] md:text-[18px] font-bold text-gray-800">
+              기술 담당
+            </span>
+          </div>
+          <ul className="space-y-3 sm:space-y-4">
+            <li className="flex items-start gap-3">
+              <span className="text-gray-400 mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                GPT API 호출을 위한 프롬프트 템플릿 구조화 및 설계
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-400 mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                AWS EC2/RDS 배포 및 Docker·Nginx 환경 구성
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-400 mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                GitHub Actions를 통한 CI/CD 파이프라인 구축
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-400 mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                서버 장애 대응 및 트러블슈팅
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-400 mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                재사용 가능한 공통 모듈 설계 및 구현
+              </span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-400 mt-1 flex-shrink-0">•</span>
+              <span className="text-gray-700 text-[14px] sm:text-[15px] md:text-base leading-relaxed break-keep">
+                토스 페이먼츠 기반 구독 결제 API 구현
+              </span>
+            </li>
           </ul>
         </div>
       </div>
