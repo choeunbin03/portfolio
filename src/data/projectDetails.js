@@ -1,3 +1,91 @@
+export const codingPracticeData = {
+  title: 'Coding Practice',
+  subtitle: '전통적인 JSP 게시판 서비스',
+  shortDescription:
+    'JSP/Spring 기반으로 구현한 게시판 서비스로, 웹 개발의 기초부터 시작한 첫 프로젝트입니다.',
+  liveUrl: 'http://144.24.70.94:8080/',
+  githubUrl: 'https://github.com/choeunbin03/prac',
+  demoAccount: {
+    id: 'aaa',
+    password: 'aaa',
+  },
+  description: 'Spring 및 JAVA 스터디를 위한',
+  description_point: '전통적인 JSP 게시판 서비스',
+  mainImage: '/coding_practice/main_photo.png',
+  duration: '2023년 (2026.01 리팩토링)',
+  team: '개인 프로젝트',
+  serviceGoalTitle: '간단한 게시판 구현을 통한 웹 개발 스터디',
+
+  serviceGoals: [
+    {
+      icon: '📝',
+      title: 'JSP/Spring 기반 게시판',
+      description:
+        '레거시 기술 스택인 JSP와 Spring으로 게시판의 핵심 기능(CRUD)을 구현하여 웹 개발의 동작 원리와 HTTP 요청-응답 구조 이해',
+    },
+    {
+      icon: '🎨',
+      title: 'AI 도구 활용 레거시 개선',
+      description:
+        'Claude Code와 Codex의 도움을 받아 기존 게시판을 현대적인 UI/UX로 재설계하고, AI 개발 도구를 활용하는 방법 습득',
+    },
+  ],
+
+  devStack: {
+    '개발 언어': 'Java, JSP, HTML5, CSS3, JavaScript',
+    프레임워크: 'Spring Framework',
+    데이터베이스: 'MySQL',
+    '서버 환경': 'Apache Tomcat',
+    IDE: 'Spring Tool Suite (STS)',
+    '배포 환경 구성': 'Oracle Cloud VM (무료 티어)',
+    '개발 도구': 'Claude Code, Codex',
+  },
+
+  documents: [
+    { name: '배포 구조도', image: '/coding_practice/arch.png' },
+    { name: '공지사항 모달', image: '/board01/notice_modal.png' },
+  ],
+
+  parts: [
+    {
+      title: '게시판 서비스 전체 기능 구현',
+      images: [],
+      description: [
+        '게시글 작성, 조회, 수정, 삭제 등 CRUD 기능 구현 페이징 구현',
+        '페이징 기능 구현',
+        '작성자/제목 기반 검색 및 드롭다운 필터 기능 구현',
+        '팝업 모달 형식의 공지사항 및 쿠키 기반 "오늘 하루동안 보지 않기" 기능 구현',
+      ],
+    },
+  ],
+
+  review: {
+    challenges: [
+      {
+        title: 'Spring Framework 기반 개발 경험과 Spring Boot의 편리성 체감',
+        content:
+          'Spring Framework를 사용하여 게시판을 개발하면서 XML 설정과 수동 빈 등록 등 전통적인 방식의 개발을 경험했고, 추후 Spring Boot로 다른 프로젝트를 진행한 뒤 자동 설정과 간편한 의존성 관리 등 Spring Boot의 편리성을 직접 체감하게 되었습니다.',
+      },
+      {
+        title: 'Oracle Cloud 환경 구성 및 서버 배포',
+        content:
+          'Oracle Cloud VM에 MySQL을 직접 설치하고 연결하는 과정에서 리눅스 환경 설정과 네트워크 구성에 대한 기초를 다졌으며, Tomcat 서버에 WAR 파일을 배포하여 실제 서비스를 구동하는 일련의 배포 과정을 경험했습니다.',
+      },
+    ],
+
+    reflection: {
+      learned: [
+        '웹 개발의 가장 기초적인 구조부터 차근차근 구축하며 웹 프로그래밍의 근본 원리를 체득했습니다.',
+        'AI 개발 도구를 활용하여 기존 프로젝트를 개선하는 방법을 학습했습니다.',
+      ],
+      improvements: [
+        '첫 프로젝트였기에 개발 기간이 예상보다 길어졌고, 초반 학습 곡선이 가파랐습니다.',
+        'SQL 쿼리가 단순한 CRUD 수준에 그쳤으며, JOIN이나 서브쿼리 등 복잡한 데이터베이스 설계 경험이 부족했습니다.',
+      ],
+    },
+  },
+};
+
 export const tranner01Data = {
   title: 'Tranner',
   subtitle: '국내 여행 계획 서비스',
@@ -37,7 +125,7 @@ export const tranner01Data = {
     프레임워크: 'Spring Boot, React',
     데이터베이스: 'RDS(MySQL)',
     '버전 관리 도구': 'Git',
-    '인프라 구성': 'AWS, Nginx, Docker',
+    '배포 환경 구성': 'AWS, Nginx, Docker',
     '배포 자동화': 'GitHub Actions',
     '프론트 사용 기술': 'zustand, tailwindCSS',
   },
@@ -133,7 +221,7 @@ export const tranner02Data = {
     데이터베이스: 'MySQL, Redis, Pinecone',
     'AI/ML': 'LangChain, Claude API, Sentence-Transformers',
     '버전 관리 도구': 'Git, GitHub',
-    '인프라 구성': 'AWS ECS, AWS ECR, AWS S3, Docker, Nginx',
+    '배포 환경 구성': 'AWS ECS, AWS ECR, AWS S3, Docker, Nginx',
     '배포 자동화': 'GitHub Actions',
     '외부 API': 'Google Places API, Google Maps API',
   },
@@ -260,7 +348,7 @@ export const phraizData = {
     프레임워크: 'Spring Boot, Next.js',
     데이터베이스: 'RDS(MySQL)',
     '버전 관리 도구': 'Git',
-    '인프라 구성': 'AWS, Nginx, Docker',
+    '배포 환경 구성': 'AWS, Nginx, Docker',
     '배포 자동화': 'GitHub Actions',
   },
   documents: [
@@ -280,10 +368,10 @@ export const phraizData = {
       ],
     },
     {
-      title: '인프라 구축 및 운영',
+      title: '배포 환경 구축 및 운영',
       images: [],
       description: [
-        'AWS EC2/RDS 기반 인프라 구축 및 Docker·Nginx 환경 구성',
+        'AWS EC2/RDS 기반 환경 구축 및 Docker·Nginx 환경 구성',
         'CI/CD 자동화 및 서버 장애 대응 경험',
       ],
     },
@@ -350,7 +438,7 @@ export const phraizData = {
         'CS 기초 지식이 실제 장애 해결에 직접적으로 연결된다는 것을 체감했습니다.',
       ],
       improvements: [
-        '초기 인프라 설계 단계에서 예상 트래픽을 더 고려했어야 했습니다.',
+        '초기 배포 환경 설계 단계에서 예상 트래픽을 더 고려했어야 했습니다.',
         '로그와 모니터링을 더 체계적으로 구성해보고 싶습니다.',
       ],
     },

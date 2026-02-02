@@ -2,11 +2,11 @@ import SkillsComponents from '../components/SkillsComponents';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSkills } from '../hooks/useSkills';
 import { useStudy } from '../hooks/useStudy';
-import HighlightCard from '../components/HighlightCard';
+import StudyCard from '../components/StudyCard';
 
 const Skills = () => {
   const { strong, knowledgeable, experienced } = useSkills();
-  const { highlightCategories } = useStudy();
+  const { studyPosts } = useStudy();
 
   return (
     <div className="w-full justify-center flex flex-col items-center px-6 sm:px-8 md:px-10">
@@ -60,8 +60,8 @@ const Skills = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 w-full">
-                  {highlightCategories.map((category) => (
-                    <HighlightCard key={category.id} category={category} />
+                  {studyPosts.map((post) => (
+                    <StudyCard key={post.id} post={post} />
                   ))}
                 </div>
               </motion.div>

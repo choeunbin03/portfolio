@@ -4,8 +4,8 @@ import ProjectComponents from '../components/projects/ProjectComponents';
 import { userProjects } from '../hooks/useProjects';
 
 const Projects = () => {
-  const { project01, project02, project03 } = userProjects();
-  const projects = [project01, project02, project03];
+  const { project99, project01, project02, project03 } = userProjects();
+  const projects = [project01, project02, project03, project99];
 
   return (
     <div className="w-full h-full flex justify-center items-center px-4 sm:px-6 md:pr-10">

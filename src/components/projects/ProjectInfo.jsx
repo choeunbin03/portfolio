@@ -12,11 +12,11 @@ const ProjectInfo = ({ serviceGoals, devStack, serviceGoalTitle }) => {
           {serviceGoalTitle || '효율적이고 편리한 서비스를 제공합니다'}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8 w-full">
+        <div className="flex flex-wrap justify-center gap-5 sm:gap-6 md:gap-8 w-full">
           {serviceGoals.map((goal, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-6 sm:p-7 md:p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-2xl p-6 sm:p-7 md:p-8 border border-gray-200 shadow-lg hover:shadow-xl transition-all duration-300 w-full md:w-[calc(33.333%-1.5rem)] md:max-w-[360px]"
             >
               {/* 아이콘 */}
               <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 text-white text-[32px] sm:text-[40px] mb-5 sm:mb-6 mx-auto">

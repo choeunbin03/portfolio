@@ -1,4 +1,5 @@
 import {
+  codingPracticeData,
   tranner01Data,
   tranner02Data,
   phraizData,
@@ -6,6 +7,9 @@ import {
 
 // 프로젝트 이름을 인자로 받아 해당하는 데이터를 반환하는 훅
 export const useProjectData = (projectName) => {
+  if (projectName === 'Coding Practice') {
+    return codingPracticeData;
+  }
   if (projectName === 'Tranner01') {
     return tranner01Data;
   }

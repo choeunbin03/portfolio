@@ -30,32 +30,6 @@ export default function AboutMeIntro() {
         // className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 xl:grid-cols-[auto_1fr] gap-6 sm:gap-8 xl:gap-16 items-start"
         className="mt-8 sm:mt-10 md:mt-12 gap-6 sm:gap-8 xl:gap-16 flex flex-col items-center"
       >
-        {/* 프로필 카드 */}
-        {/* <div className="bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 md:p-6 border-2 border-gray-200 shadow-lg mx-auto xl:mx-0 w-full max-w-[250px] sm:max-w-[250px]">
-          <img
-            src="조은빈.jpg"
-            className="w-full rounded-lg shadow-md mb-4 sm:mb-5"
-            alt="증명사진"
-          />
-          <div className="space-y-2">
-            <p className="font-bold text-[20px] sm:text-[22px] md:text-[25px] text-gray-800">
-              {personalInfo.name}
-            </p>
-            <div className="space-y-1.5 text-gray-600">
-              <p className="flex items-center gap-2 text-[14px] sm:text-[15px] md:text-[17px]">
-                <span className="text-point-main">🎂</span> {personalInfo.birth}
-              </p>
-              <p className="flex items-center gap-2 text-[14px] sm:text-[15px] md:text-[17px] break-all">
-                <span className="text-point-main">📧</span>{' '}
-                {personalInfo.contact.email}
-              </p>
-              <p className="flex items-center gap-2 text-[14px] sm:text-[15px] md:text-[17px]">
-                <span className="text-point-main">📞</span>{' '}
-                {personalInfo.contact.phone}
-              </p>
-            </div>
-          </div>
-        </div> */}
         <div className="w-full flex items-center">
           <img
             src="조은빈.jpg"
@@ -78,10 +52,10 @@ export default function AboutMeIntro() {
                 <span className="text-gray-800 font-bold">이메일: </span>{' '}
                 {personalInfo.contact.email}
               </p>
-              <p className="flex items-center gap-2 text-[12px] sm:text-[15px] md:text-[17px]">
+              {/* <p className="flex items-center gap-2 text-[12px] sm:text-[15px] md:text-[17px]">
                 <span className="text-gray-800 font-bold">전화번호: </span>{' '}
                 {personalInfo.contact.phone}
-              </p>
+              </p> */}
               <p className="flex items-center gap-2 text-[12px] sm:text-[15px] md:text-[17px]">
                 <span className="text-gray-800 font-bold">깃허브: </span>{' '}
                 <a

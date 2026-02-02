@@ -32,6 +32,11 @@ const ProjectComponents = ({ project }) => {
             <h3 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-gray-900">
               {project.name}
             </h3>
+            {project.name === 'Coding Practice' && (
+              <span className="text-[13px] sm:text-[15px] font-semibold text-white bg-gradient-to-r from-point-main to-point-main/80 px-3 py-1 rounded-full border border-point-main/50 shadow-sm">
+                첫 프로젝트
+              </span>
+            )}
             <span className="text-[16px] sm:text-[18px] lg:text-[20px] font-semibold text-point-main">
               {project.part}
             </span>
@@ -88,7 +93,9 @@ const ProjectComponents = ({ project }) => {
                             key={index}
                             className="flex items-start gap-2 text-[12px] sm:text-[13px] text-gray-700"
                           >
-                            <span className="text-point-main font-medium mt-0.5">•</span>
+                            <span className="text-point-main font-medium mt-0.5">
+                              •
+                            </span>
                             <span className="flex-1">{element.partName}</span>
                             <span className="text-gray-400 text-[11px] sm:text-[12px] whitespace-nowrap">
                               {element.contribution}

@@ -36,8 +36,14 @@ export const sections = {
       period: '2025.02',
     },
     {
-      content: '생성형AI와 AI에이전트 개발 교육 (교내 비교과 프로그램)',
+      content:
+        '생성형AI와 AI에이전트 개발 교육 (교내 비교과 프로그램 - 18시간 교육)',
       period: '2025.06.30 ~ 2025.07.02',
+    },
+    {
+      content:
+        '생성형 AI를 활용한 Web App개발 교육 (교내 비교과 프로그램 - 30시간 교육)',
+      period: '2026.01.26 ~ 2026.01.30',
     },
   ],
   certificate: [

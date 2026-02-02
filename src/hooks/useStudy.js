@@ -1,5 +1,5 @@
-import { highlightCategories } from '../data/study';
+import { studyPosts } from '../data/study';
 
 export const useStudy = () => {
-  return { highlightCategories };
+  return { studyPosts };
 };

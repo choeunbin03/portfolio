@@ -1,39 +1,53 @@
 import React from 'react';
 
-const StudyCard = ({ title, subtopics }) => {
+const StudyCard = ({ post }) => {
   return (
-    <div className="w-full bg-gradient-to-br from-gray-50 to-gray-100/50 rounded-xl p-4 sm:p-5 border border-gray-200 shadow-md hover:shadow-lg hover:border-point-main/30 transition-all duration-300 group">
-      {/* 타이틀 영역 */}
-      <div className="flex items-center gap-2 mb-3 sm:mb-4 pb-2 sm:pb-3 border-b border-gray-200 group-hover:border-point-main/30 transition-colors">
-        <div className="w-0.5 h-4 sm:h-5 bg-point-main rounded-full"></div>
-        <h4 className="font-semibold text-[14px] sm:text-[15px] md:text-[16px] text-gray-800 group-hover:text-point-main transition-colors">
-          {title}
-        </h4>
+    <a
+      href={post.link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block bg-gradient-to-br from-white to-gray-50 rounded-2xl p-6 sm:p-7 md:p-8 border border-gray-200 shadow-lg hover:shadow-xl hover:border-point-main/40 transition-all duration-300 group h-full"
+    >
+      {/* 헤더 */}
+      <div className="mb-4 sm:mb-5">
+        <h3 className="text-[18px] sm:text-[20px] md:text-[22px] font-bold text-gray-900 group-hover:text-point-main transition-colors mb-2">
+          {post.title}
+        </h3>
+        <p className="text-[14px] sm:text-[15px] text-point-main font-medium">
+          {post.subtitle}
+        </p>
       </div>
 
-      {/* 컨텐츠 영역 */}
-      <ul className="space-y-2 sm:space-y-2.5">
-        {subtopics.map((item, index) => (
-          <li key={index} className="flex items-start gap-2">
-            <span className="text-gray-400 text-[11px] sm:text-[12px] mt-0.5">•</span>
-            {item.link ? (
-              <a 
-                href={item.link} 
-                className="text-gray-700 text-[12px] sm:text-[13px] md:text-[14px] hover:text-point-main hover:underline break-keep transition-colors duration-200 leading-relaxed"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {item.text}
-              </a>
-            ) : (
-              <span className="text-gray-700 text-[12px] sm:text-[13px] md:text-[14px] break-keep leading-relaxed">
-                {item.text}
-              </span>
-            )}
-          </li>
+      {/* 구분선 */}
+      <div className="h-px bg-gradient-to-r from-gray-200 via-gray-300 to-gray-200 mb-4 sm:mb-5"></div>
+
+      {/* 설명 */}
+      <p className="text-[13px] sm:text-[14px] md:text-[15px] text-gray-600 leading-relaxed mb-5 sm:mb-6 break-keep">
+        {post.description}
+      </p>
+
+      {/* 태그 */}
+      <div className="flex flex-wrap gap-2 mt-auto">
+        {post.tags.map((tag, index) => (
+          <span
+            key={index}
+            className="px-3 py-1 text-[11px] sm:text-[12px] bg-point-main/10 text-point-main rounded-full font-medium"
+          >
+            {tag}
+          </span>
         ))}
-      </ul>
-    </div>
+      </div>
+
+      {/* 더보기 링크 */}
+      <div className="mt-5 sm:mt-6 pt-4 border-t border-gray-200">
+        <span className="text-[13px] sm:text-[14px] text-point-main font-medium flex items-center gap-2">
+          <span>자세히 보기</span>
+          <span className="group-hover:translate-x-1 transition-transform">
+            →
+          </span>
+        </span>
+      </div>
+    </a>
   );
 };
 
