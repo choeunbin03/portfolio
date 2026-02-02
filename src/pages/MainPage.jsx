@@ -1,5 +1,4 @@
 import WelcomePage from './WelcomePage';
-import MainInfo from './MainInfo';
 
 const MainPage = () => {
   return (

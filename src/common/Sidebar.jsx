@@ -7,7 +7,6 @@ import ContactModal from '../components/ContactModal';
 const Sidebar = () => {
   const github = 'https://github.com/choeunbin03';
   const blog = 'https://codstudy.tistory.com/';
-  const email = 'choeunbiin03@naver.com';
 
   const [open, setOpen] = useState(false);
 

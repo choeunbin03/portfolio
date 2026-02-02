@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectComponents from '../components/projects/ProjectComponents';
 import { userProjects } from '../hooks/useProjects';

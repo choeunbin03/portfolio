@@ -1,8 +1,6 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 import { useAboutMe } from '../../hooks/useAboutMe';
-import ValueCards from './ValueCards';
-import InterestTags from './InterestTags';
 
 export default function AboutMeIntro() {
   const { personalInfo, introduction } = useAboutMe();

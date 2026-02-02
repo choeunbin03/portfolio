@@ -1,13 +1,11 @@
-import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import ProjectInfo from '../../components/projects/ProjectInfo';
-import CodingPractice_parts from '../../components/projects/CodingPractice_parts';
+import CodingPracticeParts from '../../components/projects/CodingPractice_parts';
 import ProjectReview from '../../components/projects/ProjectReview';
 import { useProjectData } from '../../hooks/useProjectDetails';
 
 const CodingPractice = () => {
   const projectData = useProjectData('Coding Practice');
-  const [activeDocTab, setActiveDocTab] = useState(0);
 
   if (!projectData) {
     return (
@@ -250,7 +248,7 @@ const CodingPractice = () => {
                     담당 파트
                   </h3>
                 </div>
-                <CodingPractice_parts parts={projectData.parts} />
+                <CodingPracticeParts parts={projectData.parts} />
               </div>
 
               {/* 회고 */}

@@ -1,10 +1,4 @@
 import './App.css';
-import WelcomePage from './pages/WelcomePage';
-import MainInfo from './pages/MainInfo';
-import Skills from './pages/Skills';
-import Projects from './pages/Projects';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import Header from './common/Header';
 import { RouterProvider } from 'react-router';
 import router from './routes/Router';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
